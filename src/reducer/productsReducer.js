@@ -11,6 +11,7 @@ const productReducer = (state = initState, action) => {
         isFetching: false,
         data: action.data
       }
+      
     case 'FILTER_PRODUCTS':
       return {
         ...state,

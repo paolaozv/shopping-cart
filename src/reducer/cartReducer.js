@@ -17,6 +17,10 @@ const cartReducer = (state = [], action) => {
       }
       state[existingItemIndex].quantity += action.payload.quantity;
       return state.concat([]);
+    
+    case 'DELETE_PRODUCT':
+      let indexToDel = findProductIndex(state, action.payload.id);
+      return [...state.slice(0, indexToDel), ...state.slice(indexToDel+1)];
   }
 
   function findProductIndex(products, id) {
