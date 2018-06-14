@@ -3,11 +3,12 @@ const cartReducer = (state = [], action) => {
     case 'ADD_PRODUCT_TO_CART':
       console.log(action)
       let existingIndex = findProductIndex(state, action.payload.id);
-        if (existingIndex !== -1) {
-          state[existingIndex].units += 1;
-          return state.concat([]);
-        }
-        return state.concat(action.payload);
+      console.log(existingIndex)
+      if (existingIndex !== -1) {
+        state[existingIndex].quantity += 1;
+        return state.concat([]);
+      }
+      return state.concat(action.payload);
       
     case 'UPDATE_QUANTITY':
       console.log(state, action.payload.id);

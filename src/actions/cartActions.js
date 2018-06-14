@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 export const CART_PRODUCTS = 'CART_PRODUCTS';
 export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';

@@ -1,14 +1,13 @@
 # Shopping Cart
 
-
-### Start front end
-
-```
-npm start
-```
-
-### Start api json-server
+### First start api json-server
 
 ```
 json-server products.js --port 3004
+```
+
+### Second start front end
+
+```
+npm start
 ```

@@ -17,6 +17,10 @@ body {
   cursor: pointer;
 }
 
+.pointer:hover {
+  text-decoration: underline;
+}
+
 .button {
   border: none;
   background-color: crimson;
@@ -34,4 +38,36 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+.th {
+  padding: 5px 0;
+  text-align: left;
+  min-width: 150px;
+}
+
+.pd-15 {
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.delete {
+  border: none;
+  background-color: crimson;
+  padding: 6px;
+  border-radius: 15px;
+  color: #FFF;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.addLess {
+  border: none;
+  background-color: crimson;
+  padding: 5px;
+  border-radius: 6px;
+  color: #FFF;
+  margin: 0 4px;
+  font-weight: bold;
+  cursor: pointer;
 }

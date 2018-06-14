@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { updateQuantity, deleteProduct } from '../../actions/cartActions';
+import { IconArrow, EmptyCart, CartContainer } from './Cart.styles';
 
 class Cart extends React.Component {
 
@@ -32,44 +33,50 @@ class Cart extends React.Component {
     
     if (this.props.cart.length !== 0) {
       return (
-        <div className="wrapper text-center">
-          <NavLink to="/catalog" replace>
-            <i className="fa fa-arrow-left size-24"></i>
-          </NavLink>
-          <h2>My Cart</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Color</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                this.props.cart.map((obj, index) => (
-                  <tr key={index}>
-                    <td>{obj.product_name}</td>
-                    <td>{obj.product_color}</td>
-                    <td><button onClick={(e) => this.lessQuantity(obj.id)}>-</button>{obj.quantity}<button onClick={(e) => this.addQuantity(obj.id)}>+</button></td>
-                    <td>{obj.product_price}</td>
-                    <td><button onClick={(e) => this.deleteProduct(obj.id)}>Delete</button></td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
+        <div className="wrapper">
+          <IconArrow>
+            <NavLink to="/catalog" replace>
+              <i className="fa fa-arrow-left size-24"></i>
+            </NavLink>
+          </IconArrow>
+          <CartContainer>
+            <h2>My Cart</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th className="th">Name</th>
+                  <th className="th">Color</th>
+                  <th className="th">Quantity</th>
+                  <th className="th">Unit Price</th>
+                  <th className="th">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  this.props.cart.map((obj, index) => (
+                    <tr key={index}>
+                      <td className="pd-15">{obj.product_name}</td>
+                      <td className="pd-15">{obj.product_color}</td>
+                      <td className="pd-15"><button className="addLess" onClick={(e) => this.lessQuantity(obj.id)}>-</button>{obj.quantity}<button className="addLess" onClick={(e) => this.addQuantity(obj.id)}>+</button></td>
+                      <td className="pd-15">S/. {obj.product_price}</td>
+                      <td className="pd-15"><button className="delete" onClick={(e) => this.deleteProduct(obj.id)}>Delete</button></td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </CartContainer>
         </div>
       )
     } else {
       return (
-        <div className="wrapper text-center">
-          <NavLink to="/catalog" replace>
-            <i className="fa fa-arrow-left size-24"></i>
-          </NavLink>
-          <p>Empty Cart</p>
+        <div className="wrapper">
+          <IconArrow>
+            <NavLink to="/catalog" replace>
+              <i className="fa fa-arrow-left size-24"></i>
+            </NavLink>
+          </IconArrow>
+          <EmptyCart>Empty Cart</EmptyCart>
         </div>
       )
     }
