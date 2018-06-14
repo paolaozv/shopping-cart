@@ -9,6 +9,7 @@ class App extends Component {
       <AppContainer>
         <Switch>
           <Route exact path="/catalog" component={Catalog} />
+          <Redirect from="/" to="/catalog" />
         </Switch>
       </AppContainer>
     );

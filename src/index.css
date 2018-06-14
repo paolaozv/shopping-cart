@@ -4,3 +4,7 @@ body {
   font-family: sans-serif;
   box-sizing: border-box;
 }
+
+.pd-top-15 {
+  padding-top: 15px;
+}

@@ -16,3 +16,11 @@ export function listProducts (data) {
     data
   }
 }
+
+export function filterProducts (category) {
+  return (dispatch) => {
+    return axios.get(`http://localhost:3004/products?product_category=${category}`).then((response) => {
+      dispatch(listProducts(response.data));
+    });
+  }
+}
