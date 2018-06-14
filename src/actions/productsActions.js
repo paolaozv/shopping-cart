@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const LIST_PRODUCTS = 'LIST_PRODUCTS';
+export const ADD_PRODUCT = 'ADD_PRODUCT';
 
 export function loadProducts () {
   return (dispatch) => {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter } from 'react-router-dom';
-
+import 'font-awesome/css/font-awesome.css';
 import App from './Components/App/App';
 import './index.css';
 

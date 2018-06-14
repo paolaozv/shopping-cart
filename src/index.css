@@ -5,6 +5,29 @@ body {
   box-sizing: border-box;
 }
 
+.wrapper {
+  padding: 1em 0 4em;
+}
+
 .pd-top-15 {
   padding-top: 15px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.button {
+  border: none;
+  background-color: crimson;
+  padding: 9px;
+  border-radius: 5px;
+  color: #FFF;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.size-24 {
+  font-size: 24px;
+  cursor: pointer;
 }

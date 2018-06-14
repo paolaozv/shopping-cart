@@ -10,6 +10,7 @@ export const ProductContainer = styled.div`
 
 export const ContainerImg = styled.div`
   position: absolute;
+  z-index: -1;
   top: -75px;
   bottom: 0;
   left: 0;
@@ -29,5 +30,9 @@ export const ImgProduct = styled.img`
 
 export const Description = styled.div`
   width: 100%;
+  text-align: center;
+`;
+
+export const ContainerButton = styled.div`
   text-align: center;
 `;

@@ -1,9 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { loadProducts, filterProducts } from '../../actions/productsActions';
-import { CatalogContainer, Categories } from './Catalog.styles';
-import { Product } from '../Product/Product';
+import { CatalogContainer, Categories, IconCart } from './Catalog.styles';
+import Product from '../Product/Product';
 
 class Catalog extends React.Component {
 
@@ -47,24 +48,31 @@ class Catalog extends React.Component {
   render() {
     const arr = (this.listCategories() ? this.listCategories() : []);
     return (
-      <div>
-        <Categories>
-          {
-            arr.map((opt, ind) => (
-              <div key={ind} onClick={(e) => this.selectCategory(opt.product_category)} className="pd-top-15">
-                {opt.product_category}
+      <div className="wrapper">
+        <IconCart>
+          <NavLink to="/cart" replace>
+            <i className="fa fa-shopping-cart size-24"></i>
+          </NavLink>
+        </IconCart>
+        <div>
+          <Categories>
+            {
+              arr.map((opt, ind) => (
+                <div key={ind} onClick={(e) => this.selectCategory(opt.product_category)} className="pd-top-15 pointer">
+                  {opt.product_category}
+                </div>
+              ))
+            }
+            <div className="pd-top-15 pointer" onClick={this.cleanFilter}>All</div>
+          </Categories>
+          <CatalogContainer>
+            {this.props.data.map((obj, index) => (
+              <div key={index}>
+                <Product product={obj} />
               </div>
-            ))
-          }
-          <div className="pd-top-15" onClick={this.cleanFilter}>All</div>
-        </Categories>
-        <CatalogContainer>
-          {this.props.data.map((obj, index) => (
-            <div key={index}>
-              <Product product={obj} />
-            </div>
-          ))}
-        </CatalogContainer>
+            ))}
+          </CatalogContainer>
+        </div>
       </div>
     )
   }

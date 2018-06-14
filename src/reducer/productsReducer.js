@@ -7,7 +7,7 @@ const productReducer = (state = initState, action) => {
   switch (action.type) {
     case 'LIST_PRODUCTS':
       return {
-        ...state, 
+        ...state,
         isFetching: false,
         data: action.data
       }
@@ -21,4 +21,4 @@ const productReducer = (state = initState, action) => {
   return state;
 }
 
-export default productReducer
+export default productReducer;

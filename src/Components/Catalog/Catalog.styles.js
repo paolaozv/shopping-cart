@@ -8,6 +8,12 @@ export const CatalogContainer = styled.div`
 
 export const Categories = styled.div`
   display: inline-block;
-  padding: 2em;
+  padding: 2em 4em;
   float: left;
+`;
+
+export const IconCart = styled.div`
+  display: inline-block;
+  padding: 5px 25px;
+  float: right;
 `;
