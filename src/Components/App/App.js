@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { AppContainer } from './App.styles';
+import Catalog from '../Catalog/Catalog';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
+      <AppContainer>
+        <Switch>
+          <Route exact path="/catalog" component={Catalog} />
+        </Switch>
+      </AppContainer>
     );
   }
 }
