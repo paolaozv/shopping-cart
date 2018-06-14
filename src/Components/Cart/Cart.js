@@ -61,7 +61,6 @@ class Cart extends React.Component {
               }
             </tbody>
           </table>
-          <div>Total Price: </div>
         </div>
       )
     } else {
